@@ -1,8 +1,8 @@
 # Check the file yourself
 
-Budget Lock checks the file for you when you add it. To check a download
-yourself, compare its SHA-256 with the one for its version in
-[CHANGELOG.md](../CHANGELOG.md).
+You don't need to do this: Budget Lock checks the file for you when you add it.
+If you want to check a download yourself, compare its size and SHA-256
+fingerprint with the ones for its version in [CHANGELOG.md](../CHANGELOG.md).
 
 Version 6:
 

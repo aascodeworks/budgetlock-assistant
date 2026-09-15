@@ -2,6 +2,10 @@
 
 ## On Android
 
+**Turn it on first.** The assistant is a beta and starts switched off. After the
+update, Budget Lock offers it once: tap *Turn it on*. Or go to Settings → Offline
+Assistant and turn it on.
+
 **Download it here (one tap).** Assistant → *Download it here* → *Download now*.
 Budget Lock fetches the file through budgetlock.app (the file itself is stored
 on GitHub), checks it, and keeps it. You can pause; it resumes where it stopped.

@@ -1,18 +1,17 @@
 <div align="center">
 
-<img src="assets/budget-lock-icon.png" alt="Budget Lock" width="112">
+<img src="assets/banner.jpg" alt="Just type what you spent. Offline Assistant (Beta) in Budget Lock" width="100%">
 
 # Budget Lock Assistant
 
-**The file that runs Budget Lock's offline assistant on your own phone or PC.**
+**The file that lets Budget Lock's assistant understand what you type, on your own phone or PC.**
 
 [![Release](https://img.shields.io/github/v/release/aascodeworks/budgetlock-assistant?label=assistant%20file)](https://github.com/aascodeworks/budgetlock-assistant/releases/latest)
 [![Licence: Apache-2.0](https://img.shields.io/badge/licence-Apache--2.0-blue)](LICENSE)
-[![Runs on llama.cpp](https://img.shields.io/badge/runs%20on-llama.cpp-555)](https://github.com/ggml-org/llama.cpp)
 
 [<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="72">](https://play.google.com/store/apps/details?id=com.budgeting365.app)
 
-[Download page](https://budgetlock.app/model) · [Website](https://budgetlock.app) · [Privacy policy](https://budgetlock.app/privacy-policy.html)
+[Download page](https://budgetlock.app/model) · [Website](https://budgetlock.app) · [Licence and credits](https://budgetlock.app/model-license.html) · [Assistant terms](https://budgetlock.app/model-terms.html)
 
 </div>
 
@@ -23,99 +22,83 @@
 - [What it does](#what-it-does)
 - [Download](#download)
 - [Add it to the app](#add-it-to-the-app)
-- [What stays on your device](#what-stays-on-your-device)
-- [How it works](#how-it-works)
+- [Privacy](#privacy)
 - [Space and phones](#space-and-phones)
 - [About Budget Lock](#about-budget-lock)
 - [More apps by AAS Codeworks](#more-apps-by-aas-codeworks)
-- [Credits and licence](#credits-and-licence)
+- [Licence and credits](#licence-and-credits)
 - [Contact](#contact)
 
-This repository holds the released assistant files and their documentation. It
-contains no app code.
+This page holds the assistant file's downloads and a few help pages. The Budget
+Lock app itself is not here.
 
 ## What it does
 
-Type a sentence the way you would say it, and Budget Lock does the work:
+Type a sentence the way you would say it:
 
 | You type | Budget Lock |
 |---|---|
-| *spent 450 on groceries at the supermarket* | adds the expense, asking for anything it still needs, such as the account |
+| *spent 450 on groceries at the supermarket* | adds the expense, and asks if it needs anything else, such as the account |
 | *what did I spend on food last month?* | answers from your own records |
 
-Without the file, the assistant still works in a simpler mode that understands
-simple sentences only.
+The assistant is in **beta**: it starts switched off, and while you try it,
+every change it makes asks you first. It uses an AI model and sometimes gets
+things wrong. Check what it did; Undo reverses a change.
+
+Without the file, the assistant works in simple mode and understands simple
+sentences only.
 
 ## Download
 
-| Version | File | Size | Released | Works with |
-|---|---|---|---|---|
-| **6 (current)** | `BudgetLock-Assistant-v6.gguf` | 478 MB | 15 Sep 2026 | Budget Lock 1.7.2 or newer on Android, and Budget Lock for Windows |
+| Version | Size | Released | Works with |
+|---|---|---|---|
+| **6 (current)** | 478 MB | 15 Sep 2026 | Budget Lock 1.7.2 or newer on Android, and Budget Lock for Windows |
 
-**[Download version 6](https://budgetlock.app/downloads/BudgetLock-Assistant-v6.gguf)** ·
+**[Download version 6](https://github.com/aascodeworks/budgetlock-assistant/releases/download/v6/BudgetLock-Assistant-v6.gguf)** ·
 [all versions](CHANGELOG.md) ·
 [check the file yourself](docs/verify-the-file.md)
 
-SHA-256 of version 6:
+**Sharing a link?** Use one of these. They always lead to the right file, even
+if it moves:
 
-```
-fe28869ce31c6e62a1e358ee0ad1974998351091884f89e067accbc74a17921a
-```
-
-Please link to `https://budgetlock.app/model` or to the download address above
-rather than to the release asset: the budgetlock.app address stays the same if
-the file ever moves.
+- `https://budgetlock.app/model`, the page with the steps
+- `https://budgetlock.app/download/assistant`, the newest file
 
 ## Add it to the app
 
-**On your phone, one tap:** open Budget Lock → Assistant → *Download it here*.
-Budget Lock fetches the file, checks it, and can pause and resume if the
-connection drops.
+**First, turn it on:** after the update, Budget Lock offers the assistant once; tap
+**Turn it on**. Or turn it on any time in **Settings → Offline Assistant**.
 
-**Or download it yourself:**
+**Easiest:** open **Assistant** and tap **Download it here**.
+Budget Lock downloads the file, checks it and sets it up. If the connection
+drops, it carries on where it stopped.
 
-1. Download the file on your phone. It lands in **Downloads**.
+**Or do it yourself:**
+
+1. Download the file on your phone. It goes to **Downloads**.
 2. In Budget Lock, open **Assistant** and choose *I downloaded it from budgetlock.app*.
-3. Tap **Choose the file** and pick it from Downloads.
-4. Budget Lock checks that it is complete and genuine, then keeps its own copy.
-   The one in Downloads can then be deleted.
+3. Tap **Choose the file** and pick the file.
+4. Budget Lock checks it and keeps its own copy. You can delete the one in Downloads.
 
 **On Windows:** put the file in the app's `models` folder.
 
-Something went wrong? See [docs/add-the-file.md](docs/add-the-file.md) for what
-each message in the app means.
+Something went wrong? [docs/add-the-file.md](docs/add-the-file.md) explains each
+message in the app.
 
-## What stays on your device
+## Privacy
 
-- The assistant runs on your device. The sentences you type are not sent anywhere.
-- The file turns a sentence into one app command. It never sees your vault data.
-- The app goes online for the assistant only if you choose *Download it here*,
-  and only to fetch this file. That request goes to budgetlock.app, which sends
-  it on to GitHub, where the file is stored.
-- If you download the file in your browser instead, the app makes no request at all.
-
-## How it works
-
-```
- your sentence ──► assistant file (on device) ──► one command ──► Budget Lock
-                                                                  runs it on your
-                                                                  encrypted records
-```
-
-- The file is a small language model in GGUF format, run by
-  [llama.cpp](https://github.com/ggml-org/llama.cpp) inside the app.
-- Before using a file, Budget Lock checks its exact size and its SHA-256, so a
-  damaged or altered file is refused and nothing is kept from it.
-- Settings → Offline Assistant → *Check the file again* repeats the check at any time.
+- The assistant runs on your phone or PC.
+- The app goes online for it only when you tap *Download it here*, to fetch this
+  file. The download starts on budgetlock.app and comes from GitHub. The
+  [Privacy Policy](https://budgetlock.app/privacy-policy.html) has the details.
 
 ## Space and phones
 
 - **Space:** about 1 GB free while you add it, 478 MB after.
-- **Phones:** most Android phones sold in the last few years. Older or very
-  basic phones may not run it; the app tells you if that is the case. Each
-  reply shows how long it took.
+- **Phones:** most Android phones from the last few years. If yours can't run
+  it, the app tells you.
 - **Remove it any time:** Settings → Offline Assistant → *Remove the assistant
-  file*. The assistant keeps working in its simpler mode.
+  file*. The assistant goes back to simple mode.
 
 ## About Budget Lock
 
@@ -151,30 +134,30 @@ A personal finance app that keeps your records encrypted on your own device.
 
 ## More apps by AAS Codeworks
 
-| | App | What it is | Get it |
+| | App | What it is | Link |
 |---|---|---|---|
 | <img src="assets/budget-lock-icon.png" width="48" alt=""> | **Budget Lock** | Encrypted budget app and expense tracker for Android | [Google Play](https://play.google.com/store/apps/details?id=com.budgeting365.app) |
-| <img src="assets/budget-lock-icon.png" width="48" alt=""> | **Budget Lock for Windows** | The same budget file as your phone, on Windows 10 and 11 | [budgetlock.app/windows](https://budgetlock.app/windows.html) |
+| <img src="assets/budget-lock-icon.png" width="48" alt=""> | **Budget Lock for Windows** | Budget Lock on Windows 10 and 11 | [budgetlock.app/windows](https://budgetlock.app/windows.html) |
 | <img src="assets/notedraft-icon.png" width="48" alt=""> | **NoteDraft — Offline Notepad** | Private offline notepad for notes, Markdown, to-do checklists and maps | [Google Play](https://play.google.com/store/apps/details?id=app.notedraft.noteall) |
 
-## Credits and licence
+## Licence and credits
 
-The assistant file is a modified version of **Qwen3.5-0.8B** by Alibaba Cloud's
-Qwen team, used under the Apache License 2.0. AAS Codeworks fine-tuned it on
-Budget Lock's own sentence-to-command examples and quantised it to Q4_0 with
-[llama.cpp](https://github.com/ggml-org/llama.cpp) (MIT). Full attribution is in
-[NOTICE](NOTICE); the licence text is in [LICENSE](LICENSE).
+The assistant file is based on **Qwen3.5-0.8B** by Alibaba Cloud's Qwen team and
+is shared under the Apache License 2.0. AAS Codeworks trained it on Budget Lock's
+own example sentences and made it small enough for phones.
 
-The licence covers the assistant files in this repository. The Budget Lock app
-is not open source and is not covered by it. Qwen is a trademark of its owner
-and is named here only to credit the base model.
+- [Licence and credits](https://budgetlock.app/model-license.html), in plain words
+- [Assistant terms](https://budgetlock.app/model-terms.html)
+- Full texts: [LICENSE](LICENSE) and [NOTICE](NOTICE)
+
+The licence covers the assistant file. The Budget Lock app is not open source.
+Qwen is a trademark of its owner and is named here only to credit the base model.
 
 ## Contact
 
 - Help with the app or the file: **support@budgetlock.app**
-- A problem with a download or a file that fails its check: see
-  [SECURITY.md](SECURITY.md)
+- A security problem: see [SECURITY.md](SECURITY.md)
 - Like the app? A rating on [Google Play](https://play.google.com/store/apps/details?id=com.budgeting365.app)
   helps other people find it.
 
-<div align="center"><sub>© 2025–2026 AAS Codeworks</sub></div>
+<div align="center"><sub>© 2025–2026 AAS Codeworks · Google Play and the Google Play logo are trademarks of Google LLC.</sub></div>
