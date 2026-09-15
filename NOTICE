@@ -1,0 +1,18 @@
+Budget Lock Assistant file
+Copyright 2026 AAS Codeworks
+
+This product includes a modified version of Qwen3.5-0.8B,
+Copyright (c) Alibaba Cloud, Qwen Team (https://qwen.ai),
+licensed under the Apache License, Version 2.0
+(https://huggingface.co/Qwen/Qwen3.5-0.8B).
+
+Changes made by AAS Codeworks: the model was fine-tuned on Budget Lock's
+own sentence-to-command examples and quantised to Q4_0 with llama.cpp.
+It is used only to turn a sentence into one Budget Lock command; it never
+sees vault data.
+
+The file is run by llama.cpp (https://github.com/ggml-org/llama.cpp),
+Copyright (c) 2023-2026 The ggml authors, MIT License.
+
+Citation: Qwen Team, "Qwen3.5: Towards Native Multimodal Agents",
+February 2026, https://qwen.ai/blog?id=qwen3.5
