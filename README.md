@@ -52,9 +52,9 @@ sentences only.
 
 | Version | Size | Released | Works with |
 |---|---|---|---|
-| **6 (current)** | 478 MB | 15 Sep 2026 | Budget Lock 1.7.2 or newer on Android, and Budget Lock for Windows |
+| **6.1 (current)** | 478 MB | 21 Sep 2026 | Budget Lock 1.8 or newer on Android, and Budget Lock for Windows |
 
-**[Download version 6](https://github.com/aascodeworks/budgetlock-assistant/releases/download/v6/BudgetLock-Assistant-v6.gguf)** ·
+**[Download version 6.1](https://github.com/aascodeworks/budgetlock-assistant/releases/download/v6.1/BudgetLock-Assistant-v6.1.gguf)** ·
 [all versions](CHANGELOG.md) ·
 [check the file yourself](docs/verify-the-file.md)
 

@@ -4,33 +4,33 @@ You don't need to do this: Budget Lock checks the file for you when you add it.
 If you want to check a download yourself, compare its size and SHA-256
 fingerprint with the ones for its version in [CHANGELOG.md](../CHANGELOG.md).
 
-Version 6:
+Version 6.1:
 
 ```
-fe28869ce31c6e62a1e358ee0ad1974998351091884f89e067accbc74a17921a
+d93d5509490f1e3d6b7ffe77471fb26514eb897ac1a27ee694139cdc30373bec
 ```
 
-It must also be exactly **501,452,480 bytes**.
+It must also be exactly **501,452,224 bytes**.
 
 ## Windows (PowerShell)
 
 ```powershell
-Get-FileHash .\BudgetLock-Assistant-v6.gguf -Algorithm SHA256
-(Get-Item .\BudgetLock-Assistant-v6.gguf).Length
+Get-FileHash .\BudgetLock-Assistant-v6.1.gguf -Algorithm SHA256
+(Get-Item .\BudgetLock-Assistant-v6.1.gguf).Length
 ```
 
 ## macOS
 
 ```bash
-shasum -a 256 BudgetLock-Assistant-v6.gguf
-stat -f %z BudgetLock-Assistant-v6.gguf
+shasum -a 256 BudgetLock-Assistant-v6.1.gguf
+stat -f %z BudgetLock-Assistant-v6.1.gguf
 ```
 
 ## Linux
 
 ```bash
-sha256sum BudgetLock-Assistant-v6.gguf
-stat -c %s BudgetLock-Assistant-v6.gguf
+sha256sum BudgetLock-Assistant-v6.1.gguf
+stat -c %s BudgetLock-Assistant-v6.1.gguf
 ```
 
 ## Android
